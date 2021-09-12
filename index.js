@@ -32,10 +32,7 @@ client.on("message", async (message) => {
             })
         })
         res = await res.json()
-        console.log(res)
-
         res.corrections.forEach(async c =>console.log(`[\x1b[33m${c.type}\x1b[0m] \x1b[31m"${c.longDescription}\x1b[0m`) ^ console.table([["Faute", c.mistakeText], ["Correction", c.correctionText], ["Réponse(s) possible(s)", await c.suggestions.map(s => s.text)]]))
-
         message.edit(res.text)
 
     }
