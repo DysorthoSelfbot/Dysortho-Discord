@@ -8,9 +8,7 @@ var config = require('./config.json')
 client.login(config.token)
 
 client.on("message", async (message) => {
-    if (message.author.id !== client.user.id) return
-
-    console.log(typeof message.content)
+    if (message.author.id !== client.user.id) retur
 
     if (typeof message.content === "string") {
 
